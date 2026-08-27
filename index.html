@@ -23,7 +23,7 @@
     --max: 960px;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
   body {
     margin: 0;
     background: var(--bg);
@@ -31,19 +31,102 @@
     font-family: "Inter", "Helvetica Neue", Arial, "Segoe UI", sans-serif;
     line-height: 1.6;
   }
+
+  .slide {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 24px 64px;
+    scroll-snap-align: start;
+    background: var(--bg);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .slide:last-of-type { border-bottom: none; }
+  .slide > .wrap { width: 100%; margin: 0 auto; }
+  .slide-num {
+    position: absolute;
+    right: 28px;
+    bottom: 20px;
+    font-family: "Anton", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    opacity: 0.45;
+  }
+
+  .slide-warm {
+    background:
+      radial-gradient(circle at 20% 0%, rgba(240,135,47,0.22), transparent 60%),
+      linear-gradient(180deg, var(--bg-alt), var(--bg));
+  }
+  .slide-light {
+    --bg: #f7f1e6;
+    --bg-alt: #efe4cf;
+    --card: #ffffff;
+    --border: #e2d5bd;
+    --text: #241a0e;
+    --text-dim: #6b5c48;
+    --accent: #c85f18;
+    --accent-2: #a5691f;
+    --accent-dim: #d9b98a;
+    background: var(--bg);
+  }
+  .slide-dark {
+    --bg: #0b0b0d;
+    --bg-alt: #141417;
+    --card: #1a1a1f;
+    --border: #2a2a30;
+    --text: #f2f0ec;
+    --text-dim: #a8a5a0;
+    --accent: #f0872f;
+    --accent-2: #e8b74b;
+    --accent-dim: #7a4a1f;
+    background: var(--bg);
+  }
+  .slide-editorial {
+    --bg: #142a23;
+    --bg-alt: #1b3a30;
+    --card: #1b3a30;
+    --border: #2c5346;
+    --text: #f5ecd2;
+    --text-dim: #cabc9c;
+    --accent: #f2c94c;
+    --accent-2: #f2c94c;
+    --accent-dim: #7a6a30;
+    background: var(--bg);
+  }
+  .slide-editorial h2 {
+    font-size: clamp(2.6rem, 8vw, 5rem);
+    -webkit-text-stroke: 0;
+  }
+
+  .dotnav {
+    position: fixed;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 30;
+  }
+  .dotnav a {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(240,135,47,0.3);
+    border: 1px solid rgba(240,135,47,0.5);
+    display: block;
+  }
+  .dotnav a:hover { background: var(--accent, #f0872f); }
+  @media (max-width: 720px) { .dotnav { display: none; } }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
   .hint { font-family: "Inter", sans-serif; font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); }
 
-  header.hero {
-    position: relative;
-    padding: 72px 24px;
-    background:
-      radial-gradient(circle at 20% 0%, rgba(240,135,47,0.22), transparent 60%),
-      linear-gradient(180deg, var(--bg-alt), var(--bg));
-    border-bottom: 1px solid var(--border);
-  }
   .hero-inner {
     max-width: var(--max);
     margin: 0 auto;
@@ -142,8 +225,6 @@
   nav.tabs a { color: var(--text-dim); white-space: nowrap; }
   nav.tabs a:hover { color: var(--accent); text-decoration: none; }
 
-  section { padding: 56px 24px; border-bottom: 1px solid var(--border); }
-  section:last-of-type { border-bottom: none; }
   section h2 {
     font-family: "Anton", "Inter", sans-serif;
     font-weight: 400;
@@ -290,7 +371,8 @@
 </head>
 <body>
 
-<header class="hero">
+<header class="hero slide slide-warm" id="top">
+  <span class="slide-num">01 / 07</span>
   <div class="hero-inner">
     <div class="hero-text">
       <h1>TiwaDara</h1>
@@ -317,21 +399,18 @@
   </div>
 </header>
 
-<nav class="tabs">
-  <div class="wrap">
-    <a href="#bio">Bio</a>
-    <a href="#identity">Identity</a>
-    <a href="#stands-for">What He Stands For</a>
-    <a href="#advocacy">Advocacy</a>
-    <a href="#works">Selected Works</a>
-    <a href="#credits">Production &amp; Engineering</a>
-    <a href="#press">Press</a>
-    <a href="#socials">Socials &amp; Streaming</a>
-    <a href="#contact">Contact</a>
-  </div>
+<nav class="dotnav" aria-label="Slide navigation">
+  <a href="#top" title="Cover"></a>
+  <a href="#bio" title="Biography"></a>
+  <a href="#identity" title="Identity"></a>
+  <a href="#stands-for" title="What He Stands For &amp; Advocacy"></a>
+  <a href="#works" title="Selected Works"></a>
+  <a href="#credits" title="Credits &amp; Press"></a>
+  <a href="#socials" title="Socials &amp; Contact"></a>
 </nav>
 
-<section id="bio" class="bio">
+<section id="bio" class="bio slide slide-light">
+  <span class="slide-num">02 / 07</span>
   <div class="wrap">
     <h2>Biography</h2>
     <div class="bio-flex">
@@ -373,7 +452,8 @@
   </div>
 </section>
 
-<section id="identity">
+<section id="identity" class="slide slide-editorial">
+  <span class="slide-num">03 / 07</span>
   <div class="wrap">
     <h2>Identity</h2>
     <div class="chip-row">
@@ -387,7 +467,7 @@
       stories, relationships, and ideas, turning the mundane into the profound.
     </p>
 
-    <h2 style="margin-top:40px">Who He Sings For</h2>
+    <h2 style="margin-top:40px; font-size:1.9rem;">Who He Sings For</h2>
     <p class="quote">
       "For those who feel deeply, honor their roots, and seek music that echoes their innermost
       truths."
@@ -407,7 +487,8 @@
   </div>
 </section>
 
-<section id="stands-for">
+<section id="stands-for" class="slide slide-dark">
+  <span class="slide-num">04 / 07</span>
   <div class="wrap">
     <h2>What He Stands For</h2>
     <p class="quote">
@@ -444,12 +525,8 @@
       <span class="chip accent">TiwaDara and the Villagers</span>
       <span class="chip accent">TiwaDara and the Town Criers</span>
     </div>
-  </div>
-</section>
 
-<section id="advocacy">
-  <div class="wrap">
-    <h2>Stance on Causes &amp; Activism</h2>
+    <h2 style="margin-top:40px">Stance on Causes &amp; Activism</h2>
     <div class="chip-row">
       <span class="chip">Cultural Preservation &amp; Celebration</span>
       <span class="chip">Mental &amp; Emotional Wellness</span>
@@ -468,7 +545,8 @@
   </div>
 </section>
 
-<section id="works">
+<section id="works" class="slide slide-light">
+  <span class="slide-num">05 / 07</span>
   <div class="wrap">
     <h2>Selected Works <span class="hint">(click/tap on a title to listen)</span></h2>
 
@@ -549,7 +627,8 @@
   </div>
 </section>
 
-<section id="credits">
+<section id="credits" class="slide slide-dark">
+  <span class="slide-num">06 / 07</span>
   <div class="wrap">
     <h2>Production &amp; Engineering Credits</h2>
     <div class="chip-row">
@@ -559,12 +638,8 @@
       <span class="chip">Mo'believe</span>
       <span class="chip">Ilaye</span>
     </div>
-  </div>
-</section>
 
-<section id="press">
-  <div class="wrap">
-    <h2>Press <span class="hint">(articles &amp; features)</span></h2>
+    <h2 id="press" style="margin-top:40px">Press <span class="hint">(articles &amp; features)</span></h2>
     <ol class="refs">
       <li>Interview with TiwaDara on Afrobeats Radio</li>
       <li>Pulse Nigeria — "TiwaDara: The Afro-Fusion Star to Watch"</li>
@@ -577,7 +652,8 @@
   </div>
 </section>
 
-<section id="socials">
+<section id="socials" class="slide slide-light">
+  <span class="slide-num">07 / 07</span>
   <div class="wrap">
     <h2>Socials &amp; Streaming Platforms <span class="hint">(click/tap to view)</span></h2>
     <div class="subhead">Social Media</div>
@@ -594,12 +670,8 @@
       <a href="https://music.apple.com/sl/album/hello-answer-feat-andro-single/1596812489" target="_blank" rel="noopener">Apple Music</a>
       <a href="https://www.shazam.com/song/1463338487/baby-go-rmx-feat-engo" target="_blank" rel="noopener">Shazam</a>
     </div>
-  </div>
-</section>
 
-<section id="contact">
-  <div class="wrap">
-    <h2>Management &amp; Contact</h2>
+    <h2 id="contact" style="margin-top:40px">Management &amp; Contact</h2>
     <div class="contact-grid">
       <div class="card">
         <h3>Booking &amp; Press</h3>
