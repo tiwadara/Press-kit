@@ -206,6 +206,27 @@
   .bio-flex .frame { flex: 0 0 220px; }
   .bio-flex .bio-copy { flex: 1 1 420px; }
 
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .photo-grid a {
+    display: block;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 4 / 5;
+  }
+  .photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .photo-grid a:hover img { transform: scale(1.04); }
+
   nav.tabs {
     position: sticky;
     top: 0;
@@ -373,7 +394,7 @@
 <body>
 
 <header class="hero slide slide-warm" id="top">
-  <span class="slide-num">01 / 07</span>
+  <span class="slide-num">01 / 08</span>
   <div class="hero-inner">
     <div class="hero-text">
       <h1>TiwaDara</h1>
@@ -408,11 +429,12 @@
   <a href="#stands-for" title="What He Stands For &amp; Advocacy"></a>
   <a href="#works" title="Selected Works"></a>
   <a href="#credits" title="Credits &amp; Press"></a>
+  <a href="#photos" title="Press Photos"></a>
   <a href="#socials" title="Socials &amp; Contact"></a>
 </nav>
 
 <section id="bio" class="bio slide slide-light">
-  <span class="slide-num">02 / 07</span>
+  <span class="slide-num">02 / 08</span>
   <div class="wrap">
     <h2>Biography</h2>
     <div class="bio-flex">
@@ -462,7 +484,7 @@
 </section>
 
 <section id="identity" class="slide slide-editorial">
-  <span class="slide-num">03 / 07</span>
+  <span class="slide-num">03 / 08</span>
   <div class="wrap">
     <h2>Identity</h2>
     <div class="chip-row">
@@ -497,7 +519,7 @@
 </section>
 
 <section id="stands-for" class="slide slide-dark">
-  <span class="slide-num">04 / 07</span>
+  <span class="slide-num">04 / 08</span>
   <div class="wrap">
     <h2>What He Stands For</h2>
     <p class="quote">
@@ -555,7 +577,7 @@
 </section>
 
 <section id="works" class="slide slide-light">
-  <span class="slide-num">05 / 07</span>
+  <span class="slide-num">05 / 08</span>
   <div class="wrap">
     <h2>Selected Works <span class="hint">(click/tap on a title to listen)</span></h2>
 
@@ -644,7 +666,7 @@
 </section>
 
 <section id="credits" class="slide slide-dark">
-  <span class="slide-num">06 / 07</span>
+  <span class="slide-num">06 / 08</span>
   <div class="wrap">
     <h2>Production &amp; Engineering Credits</h2>
     <div class="chip-row">
@@ -668,8 +690,26 @@
   </div>
 </section>
 
+<section id="photos" class="slide slide-dark">
+  <span class="slide-num">07 / 08</span>
+  <div class="wrap">
+    <h2>Press Photos <span class="hint">(click to view full size)</span></h2>
+    <div class="photo-grid">
+      <a href="assets/gallery/photo-01.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-01.jpg" alt="TiwaDara press photo 1" loading="lazy" /></a>
+      <a href="assets/gallery/photo-02.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-02.jpg" alt="TiwaDara press photo 2" loading="lazy" /></a>
+      <a href="assets/gallery/photo-03.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-03.jpg" alt="TiwaDara press photo 3" loading="lazy" /></a>
+      <a href="assets/gallery/photo-04.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-04.jpg" alt="TiwaDara press photo 4" loading="lazy" /></a>
+      <a href="assets/gallery/photo-05.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-05.jpg" alt="TiwaDara press photo 5" loading="lazy" /></a>
+      <a href="assets/tiwadara-01.jpg" target="_blank" rel="noopener"><img src="assets/tiwadara-01.jpg" alt="TiwaDara press photo 6" loading="lazy" /></a>
+    </div>
+    <div class="note">
+      Free to use for editorial and media coverage of TiwaDara. Click any photo to open it full size.
+    </div>
+  </div>
+</section>
+
 <section id="socials" class="slide slide-light">
-  <span class="slide-num">07 / 07</span>
+  <span class="slide-num">08 / 08</span>
   <div class="wrap">
     <h2>Socials &amp; Streaming Platforms <span class="hint">(click/tap to view)</span></h2>
     <div class="subhead">Social Media</div>
