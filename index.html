@@ -207,14 +207,12 @@
   .bio-flex .frame { flex: 0 0 320px; }
   .bio-flex .bio-copy { flex: 1 1 420px; }
 
-  .slide-photo-bg {
-    background-image:
-      linear-gradient(180deg, rgba(20,42,35,0.45) 0%, rgba(20,42,35,0.75) 55%, rgba(20,42,35,0.95) 100%),
-      url('assets/gallery/photo-07.jpg');
-    background-size: cover;
-    background-position: center 78%;
+  .editorial-flex { display: flex; gap: 36px; align-items: flex-start; }
+  .editorial-flex .editorial-copy { flex: 1 1 400px; min-width: 0; }
+  .editorial-flex .frame { flex: 0 0 320px; max-width: 320px; }
+  @media (max-width: 800px) {
+    .editorial-flex { flex-wrap: wrap-reverse; }
   }
-  .slide-photo-bg .wrap { max-width: 720px; }
 
   .photo-grid {
     display: grid;
@@ -510,9 +508,11 @@
   </div>
 </section>
 
-<section id="identity" class="slide slide-editorial slide-photo-bg">
+<section id="identity" class="slide slide-editorial">
   <span class="slide-num">03 / 08</span>
   <div class="wrap">
+    <div class="editorial-flex">
+    <div class="editorial-copy">
     <h2>Identity</h2>
     <div class="chip-row">
       <span class="chip accent"><strong>Rebel Visionary</strong></span>
@@ -542,6 +542,11 @@
       who are okay being vulnerable, seeking solace, validation, and joy in music that mirrors
       their truths. It's okay to be me, it's okay to make mistakes, it's okay to grow.
     </p>
+    </div>
+    <div class="frame">
+      <img src="assets/gallery/photo-07.jpg" alt="TiwaDara" style="object-position: bottom center;" />
+    </div>
+    </div>
   </div>
 </section>
 
