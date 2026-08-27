@@ -182,6 +182,28 @@
   ol.refs { color: var(--text-dim); padding-left: 20px; }
   ol.refs li { margin-bottom: 6px; }
 
+  .links-bar { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: center; margin-top: 20px; font-size: 0.88rem; }
+  .links-bar a { color: var(--text-dim); }
+  .links-bar a:hover { color: var(--accent); }
+
+  .table-scroll { overflow-x: auto; }
+  table.tracklist { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 640px; }
+  table.tracklist th, table.tracklist td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+  table.tracklist th {
+    color: var(--text);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  table.tracklist td:first-child, table.tracklist td:nth-child(2) { color: var(--text); white-space: normal; }
+  table.tracklist tr:last-child td { border-bottom: none; }
+
   footer {
     padding: 32px 24px 64px;
     text-align: center;
@@ -200,13 +222,20 @@
   <div class="facts">
     <div><strong>Genre</strong>Afro-Fusion, Alternative R&amp;B, Soul</div>
     <div><strong>Origin</strong>Lagos, Nigeria</div>
-    <div><strong>Active</strong>2018 – Present</div>
+    <div><strong>Active</strong>2016 – Present</div>
+  </div>
+  <div class="links-bar">
+    <a href="https://tiwadara.com" target="_blank" rel="noopener">tiwadara.com</a>
+    <a href="https://www.instagram.com/tiwadara" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@tiwadara" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://x.com/itstiwadara" target="_blank" rel="noopener">Twitter / X</a>
   </div>
 </header>
 
 <nav class="tabs">
   <div class="wrap">
     <a href="#bio">Bio</a>
+    <a href="#vmcd">Village Mind, City Dream</a>
     <a href="#collaborations">Collaborations</a>
     <a href="#identity">Identity</a>
     <a href="#stands-for">What He Stands For</a>
@@ -251,6 +280,61 @@
       genres and his commitment to authenticity have made him a standout artist in the Nigerian
       music industry, using his music as a tool for storytelling and cultural expression.
     </p>
+  </div>
+</section>
+
+<section id="vmcd">
+  <div class="wrap">
+    <h2>Village Mind, City Dream (VMCD)</h2>
+    <p class="quote">A musical journey on personal growth, love and aspirations.</p>
+    <p>
+      VMCD is TiwaDara's latest EP — a project that highlights his emerging sound and style
+      through introspective tracks exploring personal growth and aspirations. It reflects on the
+      journey from a simple, rural mindset to the ambitions often found in urban life: the
+      desire for financial success, deeper connections, and meaningful friendships.
+    </p>
+    <p>
+      The narrative emphasizes the importance of love and companionship along the path to
+      achieving one's dreams, illustrating how these relationships can inspire individuals to
+      strive for more — ultimately a story about balancing dreams and reality while nurturing
+      the bonds that matter most. TiwaDara's vocal range proves versatile and eclectic, adapting
+      well to any style of production.
+    </p>
+    <div class="table-scroll">
+      <table class="tracklist">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Artist</th>
+            <th>Feature</th>
+            <th>Genre</th>
+            <th>TikTok Timestamp</th>
+            <th>Producer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>No Go Far</td><td>TiwaDara</td><td>Joyce Olong, 3rty</td><td>Afropop, Jazz</td><td>0:55</td><td>TiwaDara</td></tr>
+          <tr><td>2</td><td>Farabale</td><td>TiwaDara</td><td>—</td><td>Afrohouse, Afropop</td><td>0:17</td><td>AndroFlexin</td></tr>
+          <tr><td>3</td><td>Firelight</td><td>TiwaDara &amp; Bigfootinyourface</td><td>—</td><td>Afro Soul, Jazz</td><td>1:22</td><td>Bigfootinyourface</td></tr>
+          <tr><td>4</td><td>Empty Room</td><td>TiwaDara</td><td>—</td><td>Afropop, R&amp;B</td><td>1:48</td><td>TiwaDara</td></tr>
+          <tr><td>5</td><td>PDA</td><td>TiwaDara</td><td>—</td><td>Afropop, Afrobeats</td><td>1:20</td><td>Dunnie</td></tr>
+          <tr><td>6</td><td>Nonstop</td><td>TiwaDara</td><td>—</td><td>Dancehall, Afropop, Afrobeats</td><td>1:18</td><td>TiwaDara &amp; AndroFlexin</td></tr>
+          <tr><td>7</td><td>Peace</td><td>TiwaDara</td><td>Banke</td><td>Ballad, Soul</td><td>1:29</td><td>TiwaDara</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="facts" style="justify-content:flex-start; margin-top:20px;">
+      <div><strong>Imprint</strong>VMCD</div>
+      <div><strong>Release Date</strong>March 27th</div>
+      <div><strong>Tracks</strong>7</div>
+      <div><strong>Runtime</strong>~19 minutes</div>
+    </div>
+    <div class="note">
+      Source materials give two slightly different track/runtime counts for this project (a
+      7-track / 19-minute EP in the tracklist above, and a 6-track / 15-minute "album" summary
+      elsewhere). Shown as supplied — confirm the final numbers before this goes out to press.
+    </div>
   </div>
 </section>
 
@@ -479,6 +563,17 @@
       <div class="card">
         <h3>Booking &amp; Press</h3>
         <p class="meta">Contact details to be added — drop in a management/booking email here.</p>
+      </div>
+      <div class="card">
+        <h3>Official Site</h3>
+        <a href="https://tiwadara.com" target="_blank" rel="noopener">tiwadara.com</a><br />
+        <a href="https://tiwadara.com/about" target="_blank" rel="noopener">tiwadara.com/about</a>
+      </div>
+      <div class="card">
+        <h3>Social</h3>
+        <a href="https://www.instagram.com/tiwadara" target="_blank" rel="noopener">Instagram</a><br />
+        <a href="https://www.tiktok.com/@tiwadara" target="_blank" rel="noopener">TikTok</a><br />
+        <a href="https://x.com/itstiwadara" target="_blank" rel="noopener">Twitter / X</a>
       </div>
       <div class="card">
         <h3>GitHub</h3>
