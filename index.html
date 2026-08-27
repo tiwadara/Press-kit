@@ -211,8 +211,9 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 14px;
   }
-  .photo-grid a {
-    display: block;
+  .photo-grid figure {
+    position: relative;
+    margin: 0;
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid var(--border);
@@ -225,7 +226,21 @@
     display: block;
     transition: transform 0.3s ease;
   }
-  .photo-grid a:hover img { transform: scale(1.04); }
+  .photo-grid figure:hover img { transform: scale(1.04); }
+  .photo-grid .dl {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    padding: 5px 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    background: rgba(11,11,13,0.72);
+    color: #fff;
+    border-radius: 999px;
+    backdrop-filter: blur(2px);
+  }
+  .photo-grid .dl:hover { background: var(--accent); text-decoration: none; }
 
   nav.tabs {
     position: sticky;
@@ -693,17 +708,36 @@
 <section id="photos" class="slide slide-dark">
   <span class="slide-num">07 / 08</span>
   <div class="wrap">
-    <h2>Press Photos <span class="hint">(click to view full size)</span></h2>
+    <h2>Press Photos <span class="hint">(click to view, HD to download)</span></h2>
     <div class="photo-grid">
-      <a href="assets/gallery/photo-01.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-01.jpg" alt="TiwaDara press photo 1" loading="lazy" /></a>
-      <a href="assets/gallery/photo-02.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-02.jpg" alt="TiwaDara press photo 2" loading="lazy" /></a>
-      <a href="assets/gallery/photo-03.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-03.jpg" alt="TiwaDara press photo 3" loading="lazy" /></a>
-      <a href="assets/gallery/photo-04.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-04.jpg" alt="TiwaDara press photo 4" loading="lazy" /></a>
-      <a href="assets/gallery/photo-05.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-05.jpg" alt="TiwaDara press photo 5" loading="lazy" /></a>
-      <a href="assets/tiwadara-01.jpg" target="_blank" rel="noopener"><img src="assets/tiwadara-01.jpg" alt="TiwaDara press photo 6" loading="lazy" /></a>
+      <figure>
+        <a href="assets/gallery/photo-01.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-01.jpg" alt="TiwaDara press photo 1" loading="lazy" /></a>
+        <a class="dl" href="assets/gallery/hd/photo-01-hd.jpg" download>HD ↓</a>
+      </figure>
+      <figure>
+        <a href="assets/gallery/photo-02.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-02.jpg" alt="TiwaDara press photo 2" loading="lazy" /></a>
+        <a class="dl" href="assets/gallery/hd/photo-02-hd.jpg" download>HD ↓</a>
+      </figure>
+      <figure>
+        <a href="assets/gallery/photo-03.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-03.jpg" alt="TiwaDara press photo 3" loading="lazy" /></a>
+        <a class="dl" href="assets/gallery/hd/photo-03-hd.jpg" download>HD ↓</a>
+      </figure>
+      <figure>
+        <a href="assets/gallery/photo-04.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-04.jpg" alt="TiwaDara press photo 4" loading="lazy" /></a>
+        <a class="dl" href="assets/gallery/hd/photo-04-hd.jpg" download>HD ↓</a>
+      </figure>
+      <figure>
+        <a href="assets/gallery/photo-05.jpg" target="_blank" rel="noopener"><img src="assets/gallery/photo-05.jpg" alt="TiwaDara press photo 5" loading="lazy" /></a>
+        <a class="dl" href="assets/gallery/hd/photo-05-hd.jpg" download>HD ↓</a>
+      </figure>
+      <figure>
+        <a href="assets/tiwadara-01.jpg" target="_blank" rel="noopener"><img src="assets/tiwadara-01.jpg" alt="TiwaDara press photo 6" loading="lazy" /></a>
+        <a class="dl" href="assets/tiwadara-01.jpg" download>HD ↓</a>
+      </figure>
     </div>
     <div class="note">
-      Free to use for editorial and media coverage of TiwaDara. Click any photo to open it full size.
+      Free to use for editorial and media coverage of TiwaDara. Click a photo to view it, or the
+      "HD ↓" badge to download the full-resolution original.
     </div>
   </div>
 </section>
