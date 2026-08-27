@@ -119,15 +119,6 @@
   .card h3 { margin: 0 0 4px; font-size: 1.02rem; }
   .card .meta { color: var(--text-dim); font-size: 0.85rem; }
 
-  ul.credits { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 10px; }
-  ul.credits li {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 14px;
-    color: var(--text-dim);
-  }
-
   .platforms { display: flex; flex-wrap: wrap; gap: 12px; }
   .platforms a {
     display: inline-flex;
@@ -163,10 +154,39 @@
     color: var(--text);
     max-width: 68ch;
   }
-  .pillar h3 { color: var(--accent); }
-  .pillar p { color: var(--text-dim); margin: 0; font-size: 0.92rem; }
   .aka { color: var(--text-dim); font-size: 0.9rem; margin-top: 20px; }
   .aka strong { color: var(--text); }
+
+  .chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 4px 0 18px; }
+  .chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 9px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card);
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .chip strong { font-weight: 600; }
+  .chip .sub { color: var(--text-dim); font-weight: 400; font-size: 0.85em; }
+  .chip.accent { border-color: var(--accent-dim); }
+  .lede { color: var(--text-dim); max-width: 72ch; }
+
+  .album {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px 26px;
+    margin-bottom: 28px;
+  }
+  .album-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; margin-bottom: 6px; }
+  .album-head h3 { margin: 0; font-size: 1.2rem; }
+  .album-head .tag { color: var(--accent); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; border: 1px solid var(--accent-dim); border-radius: 999px; padding: 2px 10px; }
+  .subhead { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); margin: 32px 0 12px; }
+  .subhead:first-child { margin-top: 0; }
 
   .facts {
     display: flex;
@@ -235,12 +255,10 @@
 <nav class="tabs">
   <div class="wrap">
     <a href="#bio">Bio</a>
-    <a href="#vmcd">Village Mind, City Dream</a>
-    <a href="#collaborations">Collaborations</a>
     <a href="#identity">Identity</a>
     <a href="#stands-for">What He Stands For</a>
     <a href="#advocacy">Advocacy</a>
-    <a href="#discography">Discography</a>
+    <a href="#works">Selected Works</a>
     <a href="#credits">Production &amp; Engineering</a>
     <a href="#press">Press</a>
     <a href="#listen">Listen</a>
@@ -283,127 +301,37 @@
   </div>
 </section>
 
-<section id="vmcd">
-  <div class="wrap">
-    <h2>Village Mind, City Dream (VMCD)</h2>
-    <p class="quote">A musical journey on personal growth, love and aspirations.</p>
-    <p>
-      VMCD is TiwaDara's latest EP — a project that highlights his emerging sound and style
-      through introspective tracks exploring personal growth and aspirations. It reflects on the
-      journey from a simple, rural mindset to the ambitions often found in urban life: the
-      desire for financial success, deeper connections, and meaningful friendships.
-    </p>
-    <p>
-      The narrative emphasizes the importance of love and companionship along the path to
-      achieving one's dreams, illustrating how these relationships can inspire individuals to
-      strive for more — ultimately a story about balancing dreams and reality while nurturing
-      the bonds that matter most. TiwaDara's vocal range proves versatile and eclectic, adapting
-      well to any style of production.
-    </p>
-    <div class="table-scroll">
-      <table class="tracklist">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Track</th>
-            <th>Artist</th>
-            <th>Feature</th>
-            <th>Genre</th>
-            <th>TikTok Timestamp</th>
-            <th>Producer</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>No Go Far</td><td>TiwaDara</td><td>Joyce Olong, 3rty</td><td>Afropop, Jazz</td><td>0:55</td><td>TiwaDara</td></tr>
-          <tr><td>2</td><td>Farabale</td><td>TiwaDara</td><td>—</td><td>Afrohouse, Afropop</td><td>0:17</td><td>AndroFlexin</td></tr>
-          <tr><td>3</td><td>Firelight</td><td>TiwaDara &amp; Bigfootinyourface</td><td>—</td><td>Afro Soul, Jazz</td><td>1:22</td><td>Bigfootinyourface</td></tr>
-          <tr><td>4</td><td>Empty Room</td><td>TiwaDara</td><td>—</td><td>Afropop, R&amp;B</td><td>1:48</td><td>TiwaDara</td></tr>
-          <tr><td>5</td><td>PDA</td><td>TiwaDara</td><td>—</td><td>Afropop, Afrobeats</td><td>1:20</td><td>Dunnie</td></tr>
-          <tr><td>6</td><td>Nonstop</td><td>TiwaDara</td><td>—</td><td>Dancehall, Afropop, Afrobeats</td><td>1:18</td><td>TiwaDara &amp; AndroFlexin</td></tr>
-          <tr><td>7</td><td>Peace</td><td>TiwaDara</td><td>Banke</td><td>Ballad, Soul</td><td>1:29</td><td>TiwaDara</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="facts" style="justify-content:flex-start; margin-top:20px;">
-      <div><strong>Imprint</strong>VMCD</div>
-      <div><strong>Release Date</strong>March 27th</div>
-      <div><strong>Tracks</strong>7</div>
-      <div><strong>Runtime</strong>~19 minutes</div>
-    </div>
-    <div class="note">
-      Source materials give two slightly different track/runtime counts for this project (a
-      7-track / 19-minute EP in the tracklist above, and a 6-track / 15-minute "album" summary
-      elsewhere). Shown as supplied — confirm the final numbers before this goes out to press.
-    </div>
-  </div>
-</section>
-
-<section id="collaborations">
-  <div class="wrap">
-    <h2>Notable Collaborations</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>The Tree</h3>
-        <p class="meta">feat. Dwin, The Stoic — fuses Dwin's distinctive sound with Afrobeat rhythms.</p>
-      </div>
-      <div class="card">
-        <h3>Seke</h3>
-        <p class="meta">with Vader the Wildcard — a high-energy track built on a shared love of Afrobeat.</p>
-      </div>
-      <div class="card">
-        <h3>Busy</h3>
-        <p class="meta">with WeTalkSound &amp; Naya Akanji — an alluring fusion of R&amp;B and Afrobeats.</p>
-      </div>
-      <div class="card">
-        <h3>Collision</h3>
-        <p class="meta">with Deena Ade — a recurring soulful pairing performed under the name "Collision."</p>
-      </div>
-    </div>
-    <p class="aka">Other notable collaborators: <strong>Dunnie</strong>, <strong>GoodGirl LA</strong>.</p>
-  </div>
-</section>
-
 <section id="identity">
   <div class="wrap">
     <h2>Identity</h2>
-    <div class="grid">
-      <div class="card pillar">
-        <h3>A Rebel Visionary</h3>
-        <p>Unafraid to question norms, flip perspectives, and innovate.</p>
-      </div>
-      <div class="card pillar">
-        <h3>A Connector</h3>
-        <p>Brings people together through shared emotions, culture, and a love for music.</p>
-      </div>
-      <div class="card pillar">
-        <h3>A Seeker of Depth</h3>
-        <p>Always digging deeper into stories, relationships, and ideas — turning the mundane into the profound.</p>
-      </div>
+    <div class="chip-row">
+      <span class="chip accent"><strong>Rebel Visionary</strong></span>
+      <span class="chip accent"><strong>Connector</strong></span>
+      <span class="chip accent"><strong>Seeker of Depth</strong></span>
     </div>
+    <p class="lede">
+      Unafraid to question norms, flip perspectives, and innovate. He brings people together
+      through shared emotions, culture, and a love for music — always digging deeper into
+      stories, relationships, and ideas, turning the mundane into the profound.
+    </p>
 
     <h2 style="margin-top:40px">Who He Sings For</h2>
     <p class="quote">
       "For those who feel deeply, honor their roots, and seek music that echoes their innermost
       truths."
     </p>
-    <div class="grid">
-      <div class="card">
-        <h3>Those Who Feel Deeply</h3>
-        <p class="meta">People who experience life through their emotions and seek music that speaks to their inner world.</p>
-      </div>
-      <div class="card">
-        <h3>Those Who Honor Their Roots</h3>
-        <p class="meta">Listeners who embrace their culture while navigating modern identities.</p>
-      </div>
-      <div class="card">
-        <h3>Those Who Yearn for Connection &amp; Vulnerability</h3>
-        <p class="meta">People who are okay being vulnerable — seeking solace, validation, and joy in music that mirrors their truths.</p>
-      </div>
-      <div class="card">
-        <h3>Those Who Yearn for Growth</h3>
-        <p class="meta">It's okay to be me, it's okay to make mistakes, it's okay to grow.</p>
-      </div>
+    <div class="chip-row">
+      <span class="chip">Those Who Feel Deeply</span>
+      <span class="chip">Those Who Honor Their Roots</span>
+      <span class="chip">Those Who Yearn for Connection &amp; Vulnerability</span>
+      <span class="chip">Those Who Yearn for Growth</span>
     </div>
+    <p class="lede">
+      People who experience life through their emotions and seek music that speaks to their
+      inner world; listeners who embrace their culture while navigating modern identities; those
+      who are okay being vulnerable, seeking solace, validation, and joy in music that mirrors
+      their truths. It's okay to be me, it's okay to make mistakes, it's okay to grow.
+    </p>
   </div>
 </section>
 
@@ -414,118 +342,144 @@
       "Emotional honesty, cultural pride, and the power of simplicity in creating universal
       connection."
     </p>
-    <div class="grid">
-      <div class="card">
-        <h3>Emotional Honesty</h3>
-        <p class="meta">Creating music that embraces vulnerability, allowing listeners to face and accept their feelings.</p>
-      </div>
-      <div class="card">
-        <h3>Cultural Pride</h3>
-        <p class="meta">Celebrating roots — honoring the sounds, symbols, and stories of heritage while exploring new creative horizons.</p>
-      </div>
-      <div class="card">
-        <h3>Authenticity in Simplicity</h3>
-        <p class="meta">Stripping away excess to focus on what matters: the feel, the soul, and the connection.</p>
-      </div>
-      <div class="card">
-        <h3>Freedom of Expression</h3>
-        <p class="meta">Freeing yourself and others from the confines of tradition, societal expectations, and fear.</p>
-      </div>
-      <div class="card">
-        <h3>The Power of Connection</h3>
-        <p class="meta">Creating bridges between people, cultures, and emotions — reminding listeners they're not alone.</p>
-      </div>
-      <div class="card">
-        <h3>Rebellion With Purpose</h3>
-        <p class="meta">Not here to conform — here to challenge, inspire, and spark change. (First project: <em>Renegade</em>.)</p>
-      </div>
+    <div class="chip-row">
+      <span class="chip">Emotional Honesty</span>
+      <span class="chip">Cultural Pride</span>
+      <span class="chip">Authenticity in Simplicity</span>
+      <span class="chip">Freedom of Expression</span>
+      <span class="chip">The Power of Connection</span>
+      <span class="chip">Rebellion With Purpose</span>
     </div>
+    <p class="lede">
+      Creating music that embraces vulnerability, allowing listeners to face and accept their
+      feelings; celebrating roots — honoring the sounds, symbols, and stories of heritage while
+      exploring new creative horizons; stripping away excess to focus on what matters: the feel,
+      the soul, the connection. Freeing yourself and others from the confines of tradition,
+      societal expectations, and fear; creating bridges between people, cultures, and emotions —
+      reminding listeners they're not alone. Not here to conform — here to challenge, inspire,
+      and spark change (first project: <em>Renegade</em>).
+    </p>
     <p class="quote" style="margin-top:24px">
       "Freedom, connection, depth, and purposeful rebellion. TiwaDara's music inspires
       self-discovery and challenges the world to see differently."
     </p>
-    <p class="aka">
-      Musical reference points: <strong>Ayinla</strong>, <strong>Kolington</strong>,
-      <strong>The Weeknd</strong>, <strong>Lagbaja</strong>. Also performs under the collective
-      names <strong>TiwaDara and the Villagers</strong> and <strong>TiwaDara and the Town Criers</strong>.
-    </p>
+    <h2 style="margin-top:40px; font-size:1.1rem;">Reference Points &amp; Alter Egos</h2>
+    <div class="chip-row">
+      <span class="chip">Ayinla</span>
+      <span class="chip">Kolington</span>
+      <span class="chip">The Weeknd</span>
+      <span class="chip">Lagbaja</span>
+      <span class="chip accent">TiwaDara and the Villagers</span>
+      <span class="chip accent">TiwaDara and the Town Criers</span>
+    </div>
   </div>
 </section>
 
 <section id="advocacy">
   <div class="wrap">
     <h2>Stance on Causes &amp; Activism</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Cultural Preservation &amp; Celebration</h3>
-        <p class="meta">
-          Protecting and elevating African culture — not just as a source of inspiration, but as a
-          living, breathing legacy. Supporting the protection of indigenous languages, traditional
-          arts, and cultural education while staying rooted in heritage.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Mental &amp; Emotional Wellness</h3>
-        <p class="meta">
-          Advocating for mental health awareness, especially in African and global communities
-          where it is often stigmatized — promoting the healing power of music and safe spaces for
-          emotional vulnerability and expression.
-        </p>
-      </div>
-      <div class="card">
-        <h3>Youth Empowerment &amp; Creative Freedom</h3>
-        <p class="meta">
-          Giving the next generation the tools and confidence to express themselves authentically —
-          supporting access to music education, creative spaces, and mentorship for young African
-          artists, and breaking societal molds that stifle individuality or creativity.
-        </p>
-      </div>
+    <div class="chip-row">
+      <span class="chip">Cultural Preservation &amp; Celebration</span>
+      <span class="chip">Mental &amp; Emotional Wellness</span>
+      <span class="chip">Youth Empowerment &amp; Creative Freedom</span>
     </div>
+    <p class="lede">
+      Protecting and elevating African culture — not just as a source of inspiration, but as a
+      living, breathing legacy — by supporting indigenous languages, traditional arts, and
+      cultural education. Advocating for mental health awareness, especially in African and
+      global communities where it is often stigmatized, and promoting the healing power of music
+      and safe spaces for emotional vulnerability and expression. Giving the next generation the
+      tools and confidence to express themselves authentically — supporting access to music
+      education, creative spaces, and mentorship for young African artists, and breaking
+      societal molds that stifle individuality or creativity.
+    </p>
   </div>
 </section>
 
-<section id="discography">
+<section id="works">
   <div class="wrap">
-    <h2>Selected Discography</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Hello, Answer</h3>
-        <div class="meta">feat. Andro · Single · 2020</div>
+    <h2>Selected Works</h2>
+
+    <div class="subhead">Albums &amp; EPs</div>
+    <div class="album">
+      <div class="album-head">
+        <h3>Village Mind, City Dream (VMCD)</h3>
+        <span class="tag">EP</span>
       </div>
-      <div class="card">
-        <h3>In the Morning</h3>
-        <div class="meta">Single · 2019</div>
+      <p class="quote" style="margin-top:0">A musical journey on personal growth, love and aspirations.</p>
+      <p class="lede">
+        VMCD highlights TiwaDara's emerging sound and style through introspective tracks exploring
+        personal growth and aspirations — the journey from a simple, rural mindset to the ambitions
+        of urban life, and the love and companionship that inspire the reach for more along the way.
+      </p>
+      <div class="table-scroll">
+        <table class="tracklist">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Track</th>
+              <th>Artist</th>
+              <th>Feature</th>
+              <th>Genre</th>
+              <th>TikTok Timestamp</th>
+              <th>Producer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>No Go Far</td><td>TiwaDara</td><td>Joyce Olong, 3rty</td><td>Afropop, Jazz</td><td>0:55</td><td>TiwaDara</td></tr>
+            <tr><td>2</td><td>Farabale</td><td>TiwaDara</td><td>—</td><td>Afrohouse, Afropop</td><td>0:17</td><td>AndroFlexin</td></tr>
+            <tr><td>3</td><td>Firelight</td><td>TiwaDara &amp; Bigfootinyourface</td><td>—</td><td>Afro Soul, Jazz</td><td>1:22</td><td>Bigfootinyourface</td></tr>
+            <tr><td>4</td><td>Empty Room</td><td>TiwaDara</td><td>—</td><td>Afropop, R&amp;B</td><td>1:48</td><td>TiwaDara</td></tr>
+            <tr><td>5</td><td>PDA</td><td>TiwaDara</td><td>—</td><td>Afropop, Afrobeats</td><td>1:20</td><td>Dunnie</td></tr>
+            <tr><td>6</td><td>Nonstop</td><td>TiwaDara</td><td>—</td><td>Dancehall, Afropop, Afrobeats</td><td>1:18</td><td>TiwaDara &amp; AndroFlexin</td></tr>
+            <tr><td>7</td><td>Peace</td><td>TiwaDara</td><td>Banke</td><td>Ballad, Soul</td><td>1:29</td><td>TiwaDara</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="card">
-        <h3>Faaji</h3>
-        <div class="meta">Single</div>
+      <div class="facts" style="justify-content:flex-start; margin-top:18px;">
+        <div><strong>Imprint</strong>VMCD</div>
+        <div><strong>Release Date</strong>March 27th</div>
+        <div><strong>Tracks</strong>7</div>
+        <div><strong>Runtime</strong>~19 minutes</div>
       </div>
-      <div class="card">
-        <h3>Baby Go Rmx</h3>
-        <div class="meta">feat. Engo</div>
-      </div>
-      <div class="card">
-        <h3>Insecurities 2</h3>
-        <div class="meta">by FIF, feat. TiwaDara</div>
-      </div>
-      <div class="card">
-        <h3>Yemoja</h3>
-        <div class="meta">by Tha Beatsmith, feat. TiwaDara &amp; Rotex</div>
+      <div class="note">
+        Source materials give two slightly different track/runtime counts for this project (a
+        7-track / 19-minute EP in the tracklist above, and a 6-track / 15-minute "album" summary
+        elsewhere). Shown as supplied — confirm the final numbers before this goes out to press.
       </div>
     </div>
+
+    <div class="subhead">Singles</div>
+    <div class="chip-row">
+      <span class="chip">Hello, Answer <span class="sub">feat. Andro · 2020</span></span>
+      <span class="chip">In the Morning <span class="sub">2019</span></span>
+      <span class="chip">Faaji</span>
+      <span class="chip">Baby Go Rmx <span class="sub">feat. Engo</span></span>
+    </div>
+
+    <div class="subhead">Collaborations &amp; Features</div>
+    <div class="chip-row">
+      <span class="chip">The Tree <span class="sub">feat. Dwin, The Stoic</span></span>
+      <span class="chip">Seke <span class="sub">with Vader the Wildcard</span></span>
+      <span class="chip">Busy <span class="sub">with WeTalkSound &amp; Naya Akanji</span></span>
+      <span class="chip">Collision <span class="sub">with Deena Ade</span></span>
+      <span class="chip">Insecurities 2 <span class="sub">by FIF, feat. TiwaDara</span></span>
+      <span class="chip">Yemoja <span class="sub">by Tha Beatsmith, feat. TiwaDara &amp; Rotex</span></span>
+    </div>
+    <p class="aka">Other notable collaborators: <strong>Dunnie</strong>, <strong>GoodGirl LA</strong>.</p>
   </div>
 </section>
 
 <section id="credits">
   <div class="wrap">
     <h2>Production &amp; Engineering Credits</h2>
-    <ul class="credits">
-      <li>Dunnie</li>
-      <li>Deena Ade</li>
-      <li>Davina Oriakhi</li>
-      <li>Mo'believe</li>
-      <li>Ilaye</li>
-    </ul>
+    <div class="chip-row">
+      <span class="chip">Dunnie</span>
+      <span class="chip">Deena Ade</span>
+      <span class="chip">Davina Oriakhi</span>
+      <span class="chip">Mo'believe</span>
+      <span class="chip">Ilaye</span>
+    </div>
   </div>
 </section>
 
