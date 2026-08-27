@@ -206,6 +206,10 @@
   .bio-flex .frame { flex: 0 0 220px; }
   .bio-flex .bio-copy { flex: 1 1 420px; }
 
+  .editorial-flex { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap-reverse; }
+  .editorial-flex .editorial-copy { flex: 1 1 480px; }
+  .editorial-flex .frame { flex: 0 0 260px; max-width: 260px; }
+
   .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -456,7 +460,7 @@
     <h2>Biography</h2>
     <div class="bio-flex">
     <div class="frame frame-sm">
-      <img src="assets/tiwadara-01.jpg" alt="TiwaDara" />
+      <img src="assets/gallery/photo-03.jpg" alt="TiwaDara" />
     </div>
     <div class="bio-copy">
     <p>
@@ -503,6 +507,8 @@
 <section id="identity" class="slide slide-editorial">
   <span class="slide-num">03 / 08</span>
   <div class="wrap">
+    <div class="editorial-flex">
+    <div class="editorial-copy">
     <h2>Identity</h2>
     <div class="chip-row">
       <span class="chip accent"><strong>Rebel Visionary</strong></span>
@@ -532,6 +538,11 @@
       who are okay being vulnerable, seeking solace, validation, and joy in music that mirrors
       their truths. It's okay to be me, it's okay to make mistakes, it's okay to grow.
     </p>
+    </div>
+    <div class="frame">
+      <img src="assets/gallery/photo-01.jpg" alt="TiwaDara" />
+    </div>
+    </div>
   </div>
 </section>
 
@@ -600,7 +611,7 @@
 
     <div class="bio-flex" style="align-items:stretch; margin-bottom:8px;">
     <div class="frame frame-sm" style="flex:0 0 220px; margin-bottom:0;">
-      <img src="assets/tiwadara-01.jpg" alt="TiwaDara" />
+      <img src="assets/gallery/photo-02.jpg" alt="TiwaDara" />
     </div>
     <div class="bio-copy" style="flex:1 1 420px;">
     <div class="subhead" style="margin-top:0;">Albums &amp; EPs</div>
@@ -686,7 +697,12 @@
 <section id="credits" class="slide slide-dark">
   <span class="slide-num">06 / 08</span>
   <div class="wrap">
-    <h2>Production &amp; Engineering Credits</h2>
+    <div class="bio-flex">
+    <div class="frame frame-sm">
+      <img src="assets/gallery/photo-05.jpg" alt="TiwaDara" />
+    </div>
+    <div class="bio-copy">
+    <h2 style="margin-top:0">Production &amp; Engineering Credits</h2>
     <div class="chip-row">
       <span class="chip">Dunnie</span>
       <span class="chip">Deena Ade</span>
@@ -704,6 +720,8 @@
     </ol>
     <div class="note">
       Listed as supplied, without links — swap in the live URLs when available.
+    </div>
+    </div>
     </div>
   </div>
 </section>
@@ -748,7 +766,12 @@
 <section id="socials" class="slide slide-light">
   <span class="slide-num">08 / 08</span>
   <div class="wrap">
-    <h2>Socials &amp; Streaming Platforms <span class="hint">(click/tap to view)</span></h2>
+    <div class="bio-flex">
+    <div class="frame frame-sm">
+      <img src="assets/gallery/photo-04.jpg" alt="TiwaDara" />
+    </div>
+    <div class="bio-copy">
+    <h2 style="margin-top:0">Socials &amp; Streaming Platforms <span class="hint">(click/tap to view)</span></h2>
     <div class="subhead">Social Media</div>
     <div class="platforms">
       <a href="https://www.instagram.com/tiwadara" target="_blank" rel="noopener">Instagram</a>
@@ -780,6 +803,8 @@
         <h3>Label</h3>
         <p class="meta">MettaMusic</p>
       </div>
+    </div>
+    </div>
     </div>
   </div>
 </section>
