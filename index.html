@@ -38,21 +38,22 @@
 
   header.hero {
     position: relative;
-    padding: 96px 24px 72px;
-    text-align: center;
+    padding: 72px 24px;
     background:
-      radial-gradient(circle at 50% 0%, rgba(240,135,47,0.22), transparent 60%),
+      radial-gradient(circle at 20% 0%, rgba(240,135,47,0.22), transparent 60%),
       linear-gradient(180deg, var(--bg-alt), var(--bg));
     border-bottom: 1px solid var(--border);
   }
-  .avatar {
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--accent);
-    box-shadow: 0 0 0 6px rgba(240,135,47,0.14);
+  .hero-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
   }
+  .hero-text { flex: 1 1 340px; text-align: left; }
+  .hero-photo { flex: 0 0 280px; max-width: 320px; margin: 0 auto; }
   .hero h1 {
     font-family: "Anton", "Inter", sans-serif;
     font-weight: 400;
@@ -90,6 +91,37 @@
     border-radius: 4px;
     box-shadow: 4px 4px 0 rgba(0,0,0,0.35);
   }
+  .hero-text .facts,
+  .hero-text .links-bar {
+    justify-content: flex-start;
+  }
+
+  .frame {
+    position: relative;
+    margin: 0 0 24px;
+  }
+  .frame img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid var(--accent-dim);
+    position: relative;
+    z-index: 1;
+  }
+  .frame::after {
+    content: "";
+    position: absolute;
+    inset: 14px -14px -14px 14px;
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    z-index: 0;
+  }
+  .frame.frame-sm { max-width: 220px; }
+  .bio-flex { display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; }
+  .bio-flex .frame { flex: 0 0 220px; }
+  .bio-flex .bio-copy { flex: 1 1 420px; }
 
   nav.tabs {
     position: sticky;
@@ -259,21 +291,29 @@
 <body>
 
 <header class="hero">
-  <img class="avatar" src="https://avatars.githubusercontent.com/u/5197741?v=4" alt="TiwaDara" />
-  <h1>TiwaDara</h1>
-  <p class="tagline">"I've Got Soul and Groove"</p>
-  <p class="roles">Singer · Songwriter · Producer · Sound Engineer</p>
-  <span class="epk-badge">Electronic Press Kit</span>
-  <div class="facts">
-    <div><strong>Genre</strong>Afro-Fusion, Alternative R&amp;B, Soul</div>
-    <div><strong>Origin</strong>Lagos, Nigeria</div>
-    <div><strong>Active</strong>2016 – Present</div>
-  </div>
-  <div class="links-bar">
-    <a href="https://tiwadara.com" target="_blank" rel="noopener">tiwadara.com</a>
-    <a href="https://www.instagram.com/tiwadara" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.tiktok.com/@tiwadara" target="_blank" rel="noopener">TikTok</a>
-    <a href="https://x.com/itstiwadara" target="_blank" rel="noopener">Twitter / X</a>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>TiwaDara</h1>
+      <p class="tagline">"I've Got Soul and Groove"</p>
+      <p class="roles">Singer · Songwriter · Producer · Sound Engineer</p>
+      <span class="epk-badge">Electronic Press Kit</span>
+      <div class="facts">
+        <div><strong>Genre</strong>Afro-Fusion, Alternative R&amp;B, Soul</div>
+        <div><strong>Origin</strong>Lagos, Nigeria</div>
+        <div><strong>Active</strong>2016 – Present</div>
+      </div>
+      <div class="links-bar">
+        <a href="https://tiwadara.com" target="_blank" rel="noopener">tiwadara.com</a>
+        <a href="https://www.instagram.com/tiwadara" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@tiwadara" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://x.com/itstiwadara" target="_blank" rel="noopener">Twitter / X</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="frame">
+        <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20800%201000%27%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%27bg%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%233a1c08%27/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2745%25%27%20stop-color%3D%27%238a3f14%27/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23f0872f%27/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3CradialGradient%20id%3D%27glow%27%20cx%3D%2750%25%27%20cy%3D%2730%25%27%20r%3D%2760%25%27%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23ffd39a%27%20stop-opacity%3D%270.55%27/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23ffd39a%27%20stop-opacity%3D%270%27/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%27800%27%20height%3D%271000%27%20fill%3D%27url%28%23bg%29%27/%3E%0A%20%20%3Crect%20width%3D%27800%27%20height%3D%271000%27%20fill%3D%27url%28%23glow%29%27/%3E%0A%20%20%3Ccircle%20cx%3D%27400%27%20cy%3D%27330%27%20r%3D%27150%27%20fill%3D%27%23140a05%27%20opacity%3D%270.55%27/%3E%0A%20%20%3Cpath%20d%3D%27M210%20760%20C210%20560%20330%20460%20400%20460%20C470%20460%20590%20560%20590%20760%20Z%27%20fill%3D%27%23140a05%27%20opacity%3D%270.55%27/%3E%0A%20%20%3Cg%20opacity%3D%270.5%27%20fill%3D%27%23140a05%27%3E%0A%20%20%20%20%3Crect%20x%3D%27300%27%20y%3D%27860%27%20width%3D%2716%27%20height%3D%2760%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27334%27%20y%3D%27830%27%20width%3D%2716%27%20height%3D%2790%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27368%27%20y%3D%27800%27%20width%3D%2716%27%20height%3D%27120%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27402%27%20y%3D%27780%27%20width%3D%2716%27%20height%3D%27140%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27436%27%20y%3D%27800%27%20width%3D%2716%27%20height%3D%27120%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27470%27%20y%3D%27830%27%20width%3D%2716%27%20height%3D%2790%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27504%27%20y%3D%27860%27%20width%3D%2716%27%20height%3D%2760%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3Ctext%20x%3D%27400%27%20y%3D%27150%27%20font-family%3D%27Anton%2C%20sans-serif%27%20font-size%3D%2772%27%20fill%3D%27%23fff8ee%27%20fill-opacity%3D%270.9%27%20text-anchor%3D%27middle%27%20letter-spacing%3D%274%27%3ETD%3C/text%3E%0A%20%20%3Ctext%20x%3D%27400%27%20y%3D%27960%27%20font-family%3D%27Inter%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23fff8ee%27%20fill-opacity%3D%270.85%27%20text-anchor%3D%27middle%27%20letter-spacing%3D%273%27%3EPRESS%20PHOTO%20PLACEHOLDER%3C/text%3E%0A%3C/svg%3E" alt="TiwaDara — press photo placeholder" />
+      </div>
+    </div>
   </div>
 </header>
 
@@ -294,6 +334,11 @@
 <section id="bio" class="bio">
   <div class="wrap">
     <h2>Biography</h2>
+    <div class="bio-flex">
+    <div class="frame frame-sm">
+      <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20800%201000%27%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%27bg%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%233a1c08%27/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2745%25%27%20stop-color%3D%27%238a3f14%27/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23f0872f%27/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3CradialGradient%20id%3D%27glow%27%20cx%3D%2750%25%27%20cy%3D%2730%25%27%20r%3D%2760%25%27%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23ffd39a%27%20stop-opacity%3D%270.55%27/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23ffd39a%27%20stop-opacity%3D%270%27/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%27800%27%20height%3D%271000%27%20fill%3D%27url%28%23bg%29%27/%3E%0A%20%20%3Crect%20width%3D%27800%27%20height%3D%271000%27%20fill%3D%27url%28%23glow%29%27/%3E%0A%20%20%3Ccircle%20cx%3D%27400%27%20cy%3D%27330%27%20r%3D%27150%27%20fill%3D%27%23140a05%27%20opacity%3D%270.55%27/%3E%0A%20%20%3Cpath%20d%3D%27M210%20760%20C210%20560%20330%20460%20400%20460%20C470%20460%20590%20560%20590%20760%20Z%27%20fill%3D%27%23140a05%27%20opacity%3D%270.55%27/%3E%0A%20%20%3Cg%20opacity%3D%270.5%27%20fill%3D%27%23140a05%27%3E%0A%20%20%20%20%3Crect%20x%3D%27300%27%20y%3D%27860%27%20width%3D%2716%27%20height%3D%2760%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27334%27%20y%3D%27830%27%20width%3D%2716%27%20height%3D%2790%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27368%27%20y%3D%27800%27%20width%3D%2716%27%20height%3D%27120%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27402%27%20y%3D%27780%27%20width%3D%2716%27%20height%3D%27140%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27436%27%20y%3D%27800%27%20width%3D%2716%27%20height%3D%27120%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27470%27%20y%3D%27830%27%20width%3D%2716%27%20height%3D%2790%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27504%27%20y%3D%27860%27%20width%3D%2716%27%20height%3D%2760%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3Ctext%20x%3D%27400%27%20y%3D%27150%27%20font-family%3D%27Anton%2C%20sans-serif%27%20font-size%3D%2772%27%20fill%3D%27%23fff8ee%27%20fill-opacity%3D%270.9%27%20text-anchor%3D%27middle%27%20letter-spacing%3D%274%27%3ETD%3C/text%3E%0A%20%20%3Ctext%20x%3D%27400%27%20y%3D%27960%27%20font-family%3D%27Inter%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23fff8ee%27%20fill-opacity%3D%270.85%27%20text-anchor%3D%27middle%27%20letter-spacing%3D%273%27%3EPRESS%20PHOTO%20PLACEHOLDER%3C/text%3E%0A%3C/svg%3E" alt="TiwaDara — press photo placeholder" />
+    </div>
+    <div class="bio-copy">
     <p>
       <strong>TiwaDara</strong> is a conduit for emotion, and a bridge between worlds — blending
       music, culture, and raw humanity. Through music, he channels feelings that are both
@@ -323,6 +368,8 @@
       genres and his commitment to authenticity have made him a standout artist in the Nigerian
       music industry, using his music as a tool for storytelling and cultural expression.
     </p>
+    </div>
+    </div>
   </div>
 </section>
 
@@ -425,7 +472,12 @@
   <div class="wrap">
     <h2>Selected Works <span class="hint">(click/tap on a title to listen)</span></h2>
 
-    <div class="subhead">Albums &amp; EPs</div>
+    <div class="bio-flex" style="align-items:stretch; margin-bottom:8px;">
+    <div class="frame frame-sm" style="flex:0 0 220px; margin-bottom:0;">
+      <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20800%201000%27%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%27bg%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%233a1c08%27/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%2745%25%27%20stop-color%3D%27%238a3f14%27/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23f0872f%27/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3CradialGradient%20id%3D%27glow%27%20cx%3D%2750%25%27%20cy%3D%2730%25%27%20r%3D%2760%25%27%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23ffd39a%27%20stop-opacity%3D%270.55%27/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23ffd39a%27%20stop-opacity%3D%270%27/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%27800%27%20height%3D%271000%27%20fill%3D%27url%28%23bg%29%27/%3E%0A%20%20%3Crect%20width%3D%27800%27%20height%3D%271000%27%20fill%3D%27url%28%23glow%29%27/%3E%0A%20%20%3Ccircle%20cx%3D%27400%27%20cy%3D%27330%27%20r%3D%27150%27%20fill%3D%27%23140a05%27%20opacity%3D%270.55%27/%3E%0A%20%20%3Cpath%20d%3D%27M210%20760%20C210%20560%20330%20460%20400%20460%20C470%20460%20590%20560%20590%20760%20Z%27%20fill%3D%27%23140a05%27%20opacity%3D%270.55%27/%3E%0A%20%20%3Cg%20opacity%3D%270.5%27%20fill%3D%27%23140a05%27%3E%0A%20%20%20%20%3Crect%20x%3D%27300%27%20y%3D%27860%27%20width%3D%2716%27%20height%3D%2760%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27334%27%20y%3D%27830%27%20width%3D%2716%27%20height%3D%2790%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27368%27%20y%3D%27800%27%20width%3D%2716%27%20height%3D%27120%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27402%27%20y%3D%27780%27%20width%3D%2716%27%20height%3D%27140%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27436%27%20y%3D%27800%27%20width%3D%2716%27%20height%3D%27120%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27470%27%20y%3D%27830%27%20width%3D%2716%27%20height%3D%2790%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27504%27%20y%3D%27860%27%20width%3D%2716%27%20height%3D%2760%27/%3E%0A%20%20%3C/g%3E%0A%20%20%3Ctext%20x%3D%27400%27%20y%3D%27150%27%20font-family%3D%27Anton%2C%20sans-serif%27%20font-size%3D%2772%27%20fill%3D%27%23fff8ee%27%20fill-opacity%3D%270.9%27%20text-anchor%3D%27middle%27%20letter-spacing%3D%274%27%3ETD%3C/text%3E%0A%20%20%3Ctext%20x%3D%27400%27%20y%3D%27960%27%20font-family%3D%27Inter%2C%20sans-serif%27%20font-size%3D%2722%27%20fill%3D%27%23fff8ee%27%20fill-opacity%3D%270.85%27%20text-anchor%3D%27middle%27%20letter-spacing%3D%273%27%3EPRESS%20PHOTO%20PLACEHOLDER%3C/text%3E%0A%3C/svg%3E" alt="TiwaDara — press photo placeholder" />
+    </div>
+    <div class="bio-copy" style="flex:1 1 420px;">
+    <div class="subhead" style="margin-top:0;">Albums &amp; EPs</div>
     <div class="album">
       <div class="album-head">
         <h3>Village Mind, City Dream (VMCD)</h3>
@@ -472,6 +524,8 @@
         7-track / 19-minute EP in the tracklist above, and a 6-track / 15-minute "album" summary
         elsewhere). Shown as supplied — confirm the final numbers before this goes out to press.
       </div>
+    </div>
+    </div>
     </div>
 
     <div class="subhead">Singles</div>
