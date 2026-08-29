@@ -250,6 +250,48 @@
   }
   .photo-grid .dl:hover { background: var(--accent); text-decoration: none; }
 
+  .pdf-btn {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 40;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    background: #7a1f1f;
+    color: #fff;
+    font-family: "Anton", sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    cursor: pointer;
+  }
+  .pdf-btn:hover { background: var(--accent); text-decoration: none; }
+  @media (max-width: 720px) {
+    .pdf-btn { top: 12px; right: 12px; padding: 7px 12px; font-size: 0.68rem; }
+  }
+
+  @media print {
+    .pdf-btn, .dotnav { display: none !important; }
+    @page { size: 1280px 720px; margin: 0; }
+    html, body { margin: 0; }
+    .slide {
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .slide:not(:first-of-type) {
+      page-break-before: always;
+      break-before: page;
+    }
+    .slide:last-of-type { page-break-after: auto; break-after: auto; }
+    footer { page-break-before: always; }
+  }
+
   nav.tabs {
     position: sticky;
     top: 0;
@@ -417,6 +459,8 @@
 </style>
 </head>
 <body>
+
+<button class="pdf-btn" onclick="window.print()" type="button">Download PDF ↓</button>
 
 <header class="hero slide slide-warm" id="top">
   <span class="slide-num">01 / 08</span>
