@@ -6,10 +6,21 @@
 <title>TiwaDara — Press Kit</title>
 <meta name="description" content="Official press kit for TiwaDara — singer, songwriter, producer &amp; sound engineer." />
 <link rel="icon" type="image/png" href="assets/tiwadara-monogram.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
+  @font-face {
+    font-family: "Anton";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("assets/fonts/anton-400.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Caveat";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("assets/fonts/caveat-600.woff2") format("woff2");
+  }
   :root {
     --bg: #0b0b0d;
     --bg-alt: #141417;
@@ -269,6 +280,7 @@
     border-radius: 999px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.35);
     cursor: pointer;
+    text-decoration: none;
   }
   .pdf-btn:hover { background: var(--accent); text-decoration: none; }
   @media (max-width: 720px) {
@@ -460,7 +472,7 @@
 </head>
 <body>
 
-<button class="pdf-btn" onclick="window.print()" type="button">Download PDF ↓</button>
+<a class="pdf-btn" href="assets/TiwaDara-Press-Kit.pdf" download>Download PDF ↓</a>
 
 <header class="hero slide slide-warm" id="top">
   <span class="slide-num">01 / 08</span>
