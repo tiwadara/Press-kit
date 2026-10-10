@@ -1,0 +1,78 @@
+# Agentic Factory: copy to .github/workflows/factory.yml in any repo.
+# Docs: https://github.com/tiwadara/agentic-factory
+name: Agentic Factory
+# The reconciler matches runs to issues/PRs by "#<number>" in the run name; keep this format.
+run-name: "🏭 ${{ github.event_name }} #${{ github.event.issue.number || github.event.pull_request.number || github.event.workflow_run.pull_requests[0].number || inputs.number || github.event.workflow_run.head_branch || github.event_name }}"
+
+on:
+  issues:
+    types: [opened, reopened, labeled]
+  issue_comment:
+    types: [created]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  pull_request_review:
+    types: [submitted]
+  workflow_run:
+    workflows: [CI]            # ← name(s) of your CI workflow(s), so failures trigger the fix stage
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: Stage to run
+        type: choice
+        options: [triage, implement, review, fix]
+      number:
+        description: Issue (triage/implement) or PR (review/fix) number
+        required: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  actions: write
+  id-token: write
+
+jobs:
+  factory:
+    # Cheap pre-filter so unrelated events don't spin up the router.
+    if: >-
+      (github.event_name != 'issues' || github.event.action != 'labeled' || github.event.label.name == 'factory:ready') &&
+      (github.event_name != 'issue_comment' || !github.event.issue.pull_request) &&
+      (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'failure')
+    uses: tiwadara/agentic-factory/.github/workflows/factory.yml@v1
+    secrets: inherit
+    with:
+      app-id: ${{ vars.FACTORY_APP_ID }}
+      auto-approve: ${{ vars.FACTORY_AUTO_APPROVE == 'true' }}   # approve PRs that pass every auto-approval rule
+      paused: ${{ vars.FACTORY_PAUSED == 'true' }}   # cordon: set repo variable FACTORY_PAUSED=true
+      # Toolchain for the agent (set the ones your repo needs):
+      node-version: "24"
+      # No setup: static site with no dependencies or build step.
+      verify: |
+        node scripts/check-site.js
+      instructions: |
+        This is TiwaDara's press kit: a static site (index.html with inline CSS/JS, plus assets/)
+        deployed to GitHub Pages from main by .github/workflows/deploy-pages.yml. Read CLAUDE.md.
+        - The repo is already large (~250 MB, mostly assets/gallery/hd). Never add or change a
+          file over 1 MB; CI fails on it. Prefer editing text/markup over adding assets, and
+          never re-encode, rename or delete existing photos, fonts or the press-kit PDF.
+        - Do not touch the deploy workflow or anything under .github/.
+        - No frameworks, build step, package.json or npm dependencies; keep plain HTML/CSS/JS.
+        - Every local href/src must point to an existing file and every "#id" link to an
+          existing id; every <img> needs alt text. `node scripts/check-site.js` checks this.
+        - Keep facts about the artist (bio, credits, releases, links) exactly as given in the
+          issue; never invent credits, quotes, dates or URLs.
+      # auto-ready-sizes: xs,s,m
+      # max-fix-attempts: 3
+      # max-in-flight: 2
+      # Auto-approval rules (defaults shown):
+      # auto-approve-sizes: xs,s
+      # auto-approve-max-lines: 300
+      # auto-approve-max-risk: low
+      # auto-approve-max-fixes: 2
+      # Default paths, plus assets (photos, fonts, PDF), the site check script and a Pages custom domain.
+      require-human-paths: "(^|/)(package\\.json|package-lock\\.json|yarn\\.lock|pnpm-lock\\.yaml|requirements[^/]*\\.txt|pyproject\\.toml|poetry\\.lock|go\\.(mod|sum)|Cargo\\.(toml|lock)|Gemfile(\\.lock)?|[^/]*\\.gradle(\\.kts)?|gradle/|libs\\.versions\\.toml|Dockerfile|docker-compose[^/]*|[^/]*\\.tf|netlify\\.toml|vercel\\.json|AndroidManifest\\.xml|Info\\.plist)$|(^|/)(migrations?|auth|security|infra|deploy)/|^assets/|^scripts/|^CNAME$"
+      # max-cost-usd: 5           # Claude spend budget per issue (USD); 0 = unlimited
+      # merge-method: squash
+      # model: ""
